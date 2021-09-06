@@ -41,7 +41,12 @@ class ImageGallery extends Component {
           <Buton onFetchGallery={onFetchGallery} />
         )}
         {showModals && (
-          <Modal srcImgs={largeImg} tags={alt} onClose={this.toggleModal} />
+          <Modal
+            srcImgs={largeImg}
+            tags={alt}
+            onClose={this.toggleModal}
+            showModal={showModals}
+          />
         )}
       </div>
     );
