@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Searchbar from "./components/Searchbar";
-import ApiGallery from "./components/APIGallery/ApiGallery";
-import ImageGallery from "./components/ImageGallery/ImageGallery.jsx";
+import ApiGallery from "./components/APIGallery";
+import ImageGallery from "./components/ImageGallery";
 
 class App extends Component {
   state = {
