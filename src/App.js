@@ -1,56 +1,7 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component } from "react";
 import Searchbar from "./components/Searchbar";
-import ApiGallery from "./components/APIGallery";
-import ImageGallery from "./components/ImageGallery";
-
-// export default function App(params) {
-//   const [gallery, setGallery] = useState([]);
-//   const [searchQuery, setSearchQuery] = useState("");
-//   const [page, setPage] = useState(1);
-//   const [isLoader, setIsLoader] = useState(false);
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     fetchGallery();
-//   }, []);
-//   // componentDidUpdate(prevProps, prevState) {
-//   //   if (prevState.searchQuery !== this.state.searchQuery) {
-//   //     this.fetchGallery();
-//   //   }
-//   // }
-
-//   const FormSubmitHandler = (query) => setSearchQuery(query);
-
-//   const fetchGallery = (event) => {
-//     setIsLoader(!isLoader);
-
-//     ApiGallery(searchQuery.name, page)
-//       .then((hits) => {
-//         setGallery((prevState) => [...prevState, hits]);
-//         setPage((prevState) => prevState + 1);
-//       })
-//       .then(() => {
-//         if (page > 1)
-//           window.scrollTo({
-//             top: document.documentElement.scrollHeight,
-//             behavior: "smooth",
-//           });
-//       })
-//       .catch((error) => setError(error))
-//       .finally(() => setIsLoader(!isLoader));
-//   };
-
-//   return (
-//     <>
-//       <Searchbar onSubmit={FormSubmitHandler} />
-//       <ImageGallery
-//         gallery={gallery}
-//         onFetchGallery={fetchGallery}
-//         isLoader={isLoader}
-//       />
-//     </>
-//   );
-// }
+import ApiGallery from "./components/APIGallery/ApiGallery";
+import ImageGallery from "./components/ImageGallery/ImageGallery.jsx";
 
 class App extends Component {
   state = {
@@ -113,4 +64,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
