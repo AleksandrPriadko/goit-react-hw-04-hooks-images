@@ -13,6 +13,7 @@ export default function ImageGallery({ gallery, onFetchGallery, isLoader }) {
 
   const toggleModal = () => {
     setShowModals(!showModals);
+    console.log(!showModals);
   };
 
   const toggleModalImg = ({ largeImageURL, tags }) => {
