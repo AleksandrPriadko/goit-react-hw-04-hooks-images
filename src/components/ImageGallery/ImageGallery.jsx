@@ -13,7 +13,6 @@ export default function ImageGallery({ gallery, onFetchGallery, isLoader }) {
 
   const toggleModal = () => {
     setShowModals(!showModals);
-    console.log(!showModals);
   };
 
   const toggleModalImg = ({ largeImageURL, tags }) => {
@@ -33,7 +32,12 @@ export default function ImageGallery({ gallery, onFetchGallery, isLoader }) {
         <Buton onFetchGallery={onFetchGallery} />
       )}
       {showModals && (
-        <Modal srcImgs={largeImg} tags={alt} onClose={toggleModal} />
+        <Modal
+          srcImgs={largeImg}
+          tags={alt}
+          onClose={toggleModal}
+          showModal={showModals}
+        />
       )}
     </div>
   );

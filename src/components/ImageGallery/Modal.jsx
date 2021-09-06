@@ -4,13 +4,13 @@ import { createPortal } from "react-dom";
 
 const modalRoot = document.querySelector("#modal-root");
 
-export default function Modal({ srcImgs, tags, onClose }) {
+export default function Modal({ srcImgs, tags, onClose, showModals }) {
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
-  });
+  }, [handleKeyDown]);
   useEffect(() => {
     window.removeEventListener("keydown", handleKeyDown);
-  });
+  }, [handleKeyDown]);
 
   // componentDidMount() {
   //   window.addEventListener("keydown", this.handleKeyDown);
@@ -19,11 +19,12 @@ export default function Modal({ srcImgs, tags, onClose }) {
   //   window.removeEventListener("keydown", this.handleKeyDown);
   // }
 
-  const handleKeyDown = (e) => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  function handleKeyDown(e) {
     if (e.code === "Escape") {
       onClose();
     }
-  };
+  }
 
   return createPortal(
     <div className="Overlay">
