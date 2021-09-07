@@ -5,10 +5,11 @@ import { useEffect } from "react";
 const modalRoot = document.querySelector("#modal-root");
 
 export default function Modal({ srcImgs, tags, onClose }) {
-  // useEffect(() => {
-  //   console.log("Рендер юзефект add");
-  //   window.addEventListener("keydown", handleKeyDown);
-  // }, []);
+  useEffect((event) => {
+    console.log("Рендер юзефект add", event);
+    handleKeyDown();
+    // window.addEventListener("keydown", handleKeyDown);
+  }, []);
   // useEffect(() => {
   //   console.log("Рендер юзефект remove");
   //   window.removeEventListener("keydown", handleKeyDown);
@@ -20,26 +21,21 @@ export default function Modal({ srcImgs, tags, onClose }) {
   // //   window.removeEventListener("keydown", this.handleKeyDown);
   // // }
 
-  const handleKeyDown = (event) => {
-    console.log(event.code);
-    if (event.code === "Escape") {
-      onClose();
-    }
-  };
+  function handleKeyDown(event) {
+    console.log(event);
+    // if (e.code === "Escape") {
+    //   onClose();
+    // }
+  }
 
-  return (
-    <div className="Overlay" onKeyDown={handleKeyDown} onClick={onClose}>
-      <div
-        onKeyDown={(e) => {
-          console.log(e.code);
-          if (e.code === "Escape") {
-            onClose();
-          }
-        }}
-      >
+  console.log(handleKeyDown);
+  return createPortal(
+    <div className="Overlay" onKeyDown={handleKeyDown()}>
+      <div>
         <img src={srcImgs} alt={tags} />
       </div>
-    </div>
+    </div>,
+    modalRoot
   );
 }
 
