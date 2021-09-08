@@ -3,21 +3,22 @@ import Searchbar from "./components/Searchbar";
 import ApiGallery from "./components/APIGallery";
 import ImageGallery from "./components/ImageGallery";
 
-export default function App(params) {
+export default function App() {
   const [gallery, setGallery] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  console.log({ searchQuery });
   const [page, setPage] = useState(1);
   const [isLoader, setIsLoader] = useState(false);
   const [error, setError] = useState(null);
-  console.log(searchQuery);
 
   useEffect(() => {
     fetchGallery();
   }, [searchQuery]);
 
-  const FormSubmitHandler = ({ name }) => {
-    //console.log(name);
-    setSearchQuery(name);
+  const FormSubmitHandler = (query) => {
+    console.log(query);
+    setSearchQuery(query);
+    setPage((prev) => prev);
   };
 
   const fetchGallery = (event) => {
