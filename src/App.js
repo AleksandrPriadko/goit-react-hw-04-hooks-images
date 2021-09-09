@@ -12,6 +12,7 @@ export default function App() {
 
   useEffect(() => {
     fetchGallery();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
 
   const FormSubmitHandler = (query) => {
