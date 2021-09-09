@@ -17,8 +17,10 @@ export default function App() {
 
   const FormSubmitHandler = (query) => {
     console.log(query);
+    setGallery([]);
     setSearchQuery(query);
-    setPage((prev) => prev);
+    setPage(1);
+    setError(error);
   };
 
   const fetchGallery = (event) => {
