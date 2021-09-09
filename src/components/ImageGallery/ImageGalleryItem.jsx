@@ -1,4 +1,3 @@
-//import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 export default function ImageGalleryItem({ gallerys, toggleModalImg }) {
@@ -14,21 +13,6 @@ export default function ImageGalleryItem({ gallerys, toggleModalImg }) {
   ));
 }
 
-// class ImageGalleryItem extends Component {
-//   render() {
-//     const { gallerys, toggleModalImg } = this.props;
-//     return gallerys.map(({ id, webformatURL, tags, largeImageURL }) => (
-//       <li key={id} className="ImageGalleryItem">
-//         <img
-//           src={webformatURL}
-//           alt={tags}
-//           className="ImageGalleryItem-image"
-//           onClick={() => toggleModalImg({ tags, largeImageURL })}
-//         />
-//       </li>
-//     ));
-//   }
-// }
 ImageGalleryItem.propTypes = {
   gallerys: PropTypes.arrayOf(
     PropTypes.shape({

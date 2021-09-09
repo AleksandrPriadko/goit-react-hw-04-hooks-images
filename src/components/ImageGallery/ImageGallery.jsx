@@ -31,63 +31,11 @@ export default function ImageGallery({ gallery, onFetchGallery, isLoader }) {
         <Buton onFetchGallery={onFetchGallery} />
       )}
       {showModals && (
-        <Modal
-          srcImgs={largeImg}
-          tags={alt}
-          onClose={toggleModal}
-          showModal={showModals}
-        />
+        <Modal srcImgs={largeImg} tags={alt} onClose={toggleModal} />
       )}
     </div>
   );
 }
-
-// class ImageGallery extends Component {
-//   state = {
-//     largeImg: "",
-//     alt: "",
-//     showModals: false,
-//   };
-//   toggleModal = () => {
-//     this.setState(({ showModals }) => ({
-//       showModals: !showModals,
-//     }));
-//   };
-
-//   toggleModalImg = (gallery) => {
-//     this.setState({
-//       largeImg: gallery.largeImageURL,
-//       alt: gallery.tags,
-//     });
-//     this.toggleModal();
-//   };
-//   render() {
-//     const { gallery, onFetchGallery, isLoader } = this.props;
-//     const { showModals, largeImg, alt } = this.state;
-//     return (
-//       <div className="ImageBlock">
-//         <ul className="ImageGallery">
-//           <ImageGalleryItem
-//             gallerys={gallery}
-//             toggleModalImg={this.toggleModalImg}
-//           />
-//         </ul>
-//         {isLoader && <Loader />}
-//         {gallery.length > 0 && !isLoader && (
-//           <Buton onFetchGallery={onFetchGallery} />
-//         )}
-//         {showModals && (
-//           <Modal
-//             srcImgs={largeImg}
-//             tags={alt}
-//             onClose={this.toggleModal}
-//             showModal={showModals}
-//           />
-//         )}
-//       </div>
-//     );
-//   }
-// }
 
 ImageGallery.propTypes = {
   gallery: PropTypes.array.isRequired,
